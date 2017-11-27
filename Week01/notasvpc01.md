@@ -34,15 +34,15 @@ Is made of IGW, Route Tables, NACLs, SGs, Subnets
 
 1. Gateway (IGW)
 
-2. IGW
+  1. IGW
 
-3. VPG
+  2. VPG
 
-4. CG
+  3. CG
 
-5. VPN
+2. VPN
 
-6. Direct Connect (Connection in certain AZs where they have a partner)
+  1. Direct Connect (Connection in certain AZs where they have a partner)
 
     1. Higher Bandwidth than VPN
 
@@ -54,7 +54,7 @@ Is made of IGW, Route Tables, NACLs, SGs, Subnets
 
     5. HA supported
 
-7. Hardware-based VPN via VPG
+ 2. Hardware-based VPN via VPG
 
 ### Creating a VPC (per region)
 
