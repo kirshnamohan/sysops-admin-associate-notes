@@ -32,7 +32,7 @@ Is made of IGW, Route Tables, NACLs, SGs, Subnets
 
 ### VPC Access
 
-1. Gateway (IGW)
+#### Gateway (IGW)
 
   1. IGW
 
@@ -40,19 +40,19 @@ Is made of IGW, Route Tables, NACLs, SGs, Subnets
 
   3. CG
 
-2. VPN
+#### VPN
 
   1. Direct Connect (Connection in certain AZs where they have a partner)
 
-    1. Higher Bandwidth than VPN
+    - Higher Bandwidth than VPN
 
-    2. Use VLAN’s
+    - VLAN like setup
 
-    3. Dedicated and Isolated
+    - Dedicated and Isolated
 
-    4. No Internet
+    - No Internet
 
-    5. HA supported
+    - HA supported
 
  2. Hardware-based VPN via VPG
 
@@ -179,12 +179,12 @@ Enables to capture ip traffic flow information for the network interfaces in you
 
 2. Role
 
-    -. create a role with
-        *. logs:CreateLogGroup
-        *. logs:CreateLogStream
-        *. logs:DescribeLogGroups
-        *. logs:DescribeLogStreams
-        *. logs:PutLogEvents
+    - create a role with
+        * logs:CreateLogGroup
+        * logs:CreateLogStream
+        * logs:DescribeLogGroups
+        * logs:DescribeLogStreams
+        * logs:PutLogEvents
 
 9. Destination Log Group
     0. create a log group
