@@ -34,17 +34,17 @@ Is made of IGW, Route Tables, NACLs, SGs, Subnets
 
 1. Gateway (IGW)
 
-2. IGW
+  1. IGW
 
-3. VPG
+  2. VPG
 
-4. CG
+  3. CG
 
-5. VPN
+2. VPN
 
-6. Direct Connect (Connection in certain AZs where they have a partner)
+  1. Direct Connect (Connection in certain AZs where they have a partner)
 
-    1. + Bandwidth than VPN
+    1. Higher Bandwidth than VPN
 
     2. Use VLAN’s
 
@@ -54,7 +54,7 @@ Is made of IGW, Route Tables, NACLs, SGs, Subnets
 
     5. HA supported
 
-7. Hardware-based VPN via VPG
+ 2. Hardware-based VPN via VPG
 
 ### Creating a VPC (per region)
 
@@ -102,7 +102,22 @@ Is made of IGW, Route Tables, NACLs, SGs, Subnets
 
 3. It doesn’t sit behind a SG
 
-NAT Gateway NAT Instance Availability yes user managed Bandwidth up to 10Gbps depends in instance type Mantenaince aws user Performance optimized generic ami configured to nat Cost SG not user managed sg NACL yes yes flow logs yes yes port forwarding no user managed bastion servers not supported can be used as bastion traffic meters not supported can see cloudwatch timeout behaviour sends a RST sends a FIN ip fragmentation yes udp / no tcp icmp yes for udp, tcp, icmp Public IP auto user managed EIP
+|| NAT Gateway | NAT Instance | 
+|---|---|---|
+| Availability | yes | user managed |
+| Bandwidth | up to 10Gbps | depends in instance type |
+| Mantenaince | aws | user | 
+| Performance | optimized | generic ami configured to nat |
+| Cost | | |
+| SG | not available | user managed sg |
+| NACL | yes | yes |
+| Flow logs | yes | yes |
+| Port forwarding | no | user managed | 
+| Can be used as bastion server | not supported | yes |
+| Traffic meters | not supported | can see cloudwatch |
+| Timeout behaviour | sends a RST | sends a FIN | 
+| IP fragmentation | udp only | yes |
+| Public IP | auto | user managed EIP |
 
 ### VPC Security
 
