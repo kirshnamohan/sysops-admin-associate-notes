@@ -57,6 +57,7 @@ The EC2 instances in an Auto Scaling group have a path, or lifecycle, that diffe
 ![lifecycle](http://docs.aws.amazon.com/autoscaling/latest/userguide/images/auto_scaling_lifecycle.png)
 
 ### Scale Out
+The following scale out events direct the Auto Scaling group to launch EC2 instances and attach them to the group:
 - Manually increase the size of the group
 - Create a scaling policy to automatically increase the size of the group based on a specified increase in demand
 - Set up scaling by schedule to increase the size of the group at a specific time
@@ -64,8 +65,30 @@ The EC2 instances in an Auto Scaling group have a path, or lifecycle, that diffe
 - When each instance is fully configured and passes the Amazon EC2 health checks, it is attached to the Auto Scaling group and it enters the _InService state_.
 
 ### Instances in Service
+Instances remain in the InService state until one of the following occurs:
+- A scale in event occurs, and Auto Scaling chooses to terminate this instance in order to reduce the size of the Auto Scaling group
+- You put the instance into a Standby state.
+- You detach the instance from the Auto Scaling group.
+- The instance fails a required number of health checks, so it is removed from the Auto Scaling group, terminated, and replaced.
+
 ### Scale In
+The following scale in events direct the Auto Scaling group to detach EC2 instances from the group and terminate them:
+- You manually decrease the size of the group.
+- You create a scaling policy to automatically decrease the size of the group based on a specified decrease in demand.
+- You set up scaling by schedule to decrease the size of the group at a specific time.
+
 ### Attach an Instance
+You can attach a running EC2 instance that meets certain criteria to your Auto Scaling group. After the instance is attached, it is managed as part of the Auto Scaling group.
+
 ### Detach an Instance
+You can detach an instance from your Auto Scaling group. After the instance is detached, you can manage it separately from the Auto Scaling group or attach it to a different Auto Scaling group.
+
 ### Lifecycle Hooks
+You can add a lifecycle hook to your Auto Scaling group so that you can perform custom actions when instances launch or terminate. For more information, see [Auto Scaling Lifecycle Hooks](http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html).
+
 ### Enter and Exit Standby
+- You can put any instance that is in an InService state into a Standby state. This enables you to remove the instance from service, troubleshoot or make changes to it, and then put it back into service.
+- Instances in a Standby state continue to be managed by the Auto Scaling group. However, they are not an active part of your application until you put them back into service.
+
+
+-- Voila! Badabing, badaboom would you take a look at that!
